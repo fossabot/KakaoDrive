@@ -131,12 +131,14 @@ body {
 }
 
 #footerWrap {
+	position: relative;
 	display: block;
 	width: 100%;
 	line-height: 30px;
 	height: 30px;
 	background-color: #e9eff6;
 	clear: both;
+	z-index: 11;
 }
 
 #bodyWrap > nav, #bodyWrap > section {
@@ -161,6 +163,19 @@ body {
 	content:" "; 
 	display:block; 
 	clear:both;
+}
+
+#navSizeCtrl {
+	border-left: 1px solid #e8e8e8;
+	border-right: 1px solid #858585;
+	background: #fbfbfb;
+	position: absolute;
+	width: 5px;
+	top: 0;
+	left: 200px;
+	z-index: 1;
+	height: 100%;
+	cursor: w-resize;
 }
 
 

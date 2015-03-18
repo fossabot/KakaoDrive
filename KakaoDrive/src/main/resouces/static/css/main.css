@@ -95,38 +95,46 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-	html,body {
-	    padding: 0;
-	    margin: 0;
-	}
-	
-	header {
-	    position:fixed;
-	    top:0;
-	    width:100%;
-	    height:40px;
-	    background-color:#eee;
-	}
-	
-	footer {
-	    background-color: #eee;
-	    width: 100%;
-	    bottom: 0;
-	    position: fixed;
-	}
-	#main{
-	    padding-top:40px;
-	    
-	}
+html,body {
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	height: 100%;
+}
+
+body {
+	font-size: 12px;
+	font-family: "돋음",dotum,sans-serif;
+	color: #333;
+}
+
+#Head {
+	position: relative;
+	width: 100%;
+	height: 50px;
+	overflow: hidden;
+	z-index: 10;
+	background-color: #eee;
+}
+
+#bodyWrap {
+	width: 100%;
+	min-height: 100%;
+	margin: -50px auto -32px;
+	background-color: #fbfcfc;
+	z-index: 5;
+}
 
 
-
-
-
-
-
-
-
+#footerWrap {
+	display: block;
+	width: 100%;
+	line-height: 30px;
+	height: 31px;
+	border-top: 1px solid #ced4db;
+	background-color: #e9eff6;
+	clear: both;
+}
 
 
 /* ==========================================================================

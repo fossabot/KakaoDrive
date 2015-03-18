@@ -120,20 +120,47 @@ body {
 #bodyWrap {
 	width: 100%;
 	min-height: 100%;
-	margin: -50px auto -32px;
+	margin: -50px auto -30px;
 	background-color: #fbfcfc;
 	z-index: 5;
 }
 
+/* IE Hack */
+*html #bodyWrap { 
+	height: 100%;
+}
 
 #footerWrap {
 	display: block;
 	width: 100%;
 	line-height: 30px;
-	height: 31px;
-	border-top: 1px solid #ced4db;
+	height: 30px;
 	background-color: #e9eff6;
 	clear: both;
+}
+
+#bodyWrap > nav, #bodyWrap > section {
+	padding: 50px 0 30px 0;
+}
+
+#bodyWrap > nav {
+	background: #ffdfee;
+	float: left;
+	margin-right: -200px;
+	width: 200px;
+	height: 200px;
+}
+
+#bodyWrap > section {
+	margin-left: 200px;
+	background: #ffffee;
+	height: 500px;
+}
+
+#bodyWrap > section:after {
+	content:" "; 
+	display:block; 
+	clear:both;
 }
 
 

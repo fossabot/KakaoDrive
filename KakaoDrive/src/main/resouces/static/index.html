@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="ko">
+<html ng-app="com.kakao.drive.web" lang="ko">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,7 +26,7 @@
 			<nav>
 			nav
 			</nav>
-			<div id="navSizeCtrl">
+			<div flex-splitbar id="navSizeCtrl" >
 			</div>
 			<section>
 			contents
@@ -37,11 +37,16 @@
 			<div>ⓒ Daum Kakao Corp.</div>
 		</footer>
 	
-		<script
-			src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		
+		<script src="js/angularjs/angular.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+		
 		<script src="js/plugins.js"></script>
 		<script src="js/main.js"></script>
+		
+		<script src="js/app.js"></script>
+		<script src="js/directives.js"></script>
 	
 		<script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

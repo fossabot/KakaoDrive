@@ -2,20 +2,62 @@
 
 /* Directives */
 
-var archiveDirectives = angular.module('archiveDirectives', []);
+var directives = angular.module('com.kakao.drive.web.directives', []);
 
-archiveDirectives.directive('fileModel', [ '$parse', function($parse) {
-	return {
-		restrict : 'A',
-		link : function(scope, element, attrs) {
-			var model = $parse(attrs.fileModel);
-			var modelSetter = model.assign;
+directives.directive('flexSplitbar', [ '$document', function($document) {
+    return function(socpe, element, attr) {
+        var startX = 0;
+        
+        var option = {
+            leftElement : null,
+            rightElement : null,
+            barElement : element,
+            minSize : 150,
+            maxSize : 500,
+            width : 4,
+            unit : 'px',
+            callback : function() {
+            }
+        };
+        
+        console.log(attr);
+        console.log(element);
+        
+        console.log(element.previousElementSibling);
+        console.log(element.nextElementSibling);
+        
+        element.css({
+            width : option.width + option.unit
+        });
+        
+        restrict: 'A', element.on('mousedown', function(event) {
+            event.preventDefault();
 
-			element.bind('change', function() {
-				scope.$apply(function() {
-					modelSetter(scope, element[0].files[0]);
-				});
-			});
-		}
-	};
-}]);
+            $document.on('mousemove', mousemove);
+            $document.on('mouseup', mouseup);
+            
+            startX = event.pageX + event.layerX;
+        });
+
+        function mousemove(event) {
+            
+            var x = startX - (startX - event.x) - option.width/2;
+            x = Math.min(option.maxSize, Math.max(option.minSize, x));
+            
+
+            element.css({
+                left : x + option.unit,
+                opacity : 0.5
+            });
+        }
+        ;
+
+        function mouseup() {
+            element.css({
+                opacity : 1
+            });
+            $document.off('mousemove', mousemove);
+            $document.off('mouseup', mouseup);
+        }
+    };
+} ]);

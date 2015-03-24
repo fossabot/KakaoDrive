@@ -3,10 +3,10 @@
 /* App Module */
 
 var app = angular.module('com.kakao.drive.web', [
-    'com.kakao.drive.web.directives',
-//    'archiveServices',
-//    'archiveDirectives',
-//    'commonFilters',
+	'com.kakao.drive.web.controllers',
+	'com.kakao.drive.web.services',
+	'com.kakao.drive.web.directives',
+	'com.kakao.drive.web.filters',
     ]);
 
 app.run(function($rootScope, $http) {

@@ -12,9 +12,9 @@ directives.directive('flexSplitbar', [ '$document', function($document) {
             leftElement : attr.left,
             rightElement : attr.right,
             barElement : element,
-            minSize : 150,
-            maxSize : 500,
-            width : 4,
+            minSize : attr.min || 150,
+            maxSize : attr.max || 500,
+            width : attr.size || 4,
             unit : 'px',
             callback : function() {
             }

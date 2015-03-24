@@ -2,25 +2,29 @@
 
 /* Controllers */
 
-var archiveControllers = angular.module('archiveControllers', []);
+var baseControllers = angular.module('com.kakao.drive.web.controllers', []);
 
-archiveControllers.controller('UploadCtrl', [ '$scope', 'UploadService', function($scope, uploadService) {
-	$scope.uploadFile = function() {
-		var file = $scope.myFile;
-		console.log('file is ' + JSON.stringify(file));
-		var uploadUrl = "/archive/upload";
-		uploadService.uploadFileToUrl(uploadUrl, file);
+baseControllers.controller('NavigationController', [ '$scope', 'OperationService', 'TreeService', function($scope, operationService, treeService) {
+	$scope.upload = function() {
+		console.log('upload!');
+//		var file = $scope.myFile;
+//		console.log('file is ' + JSON.stringify(file));
+//		var uploadUrl = "/archive/upload";
+//		uploadService.uploadFileToUrl(uploadUrl, file);
 	};
 }]);
 
 
-archiveControllers.controller('ArchiveCtrl', [ '$scope', 'ArchiveService', 'DownloadService', function($scope, archiveService, downloadService) {
-	$scope.search = function(fileName) {
-		archiveService.search(fileName);
+baseControllers.controller('SectionController', [ '$scope', 'OperationService', 'ExplorerService', function($scope, operationService, explorerService) {
+	$scope.newFolder = function() {
+		console.log('newfolder!');
 	};
-	
-	$scope.downloadZip = function(fileName) {
-		console.log(fileName);
-		downloadService.downloadZip(fileName);
-	};
+//	$scope.search = function(fileName) {
+//		archiveService.search(fileName);
+//	};
+//	
+//	$scope.downloadZip = function(fileName) {
+//		console.log(fileName);
+//		downloadService.downloadZip(fileName);
+//	};
 }]);

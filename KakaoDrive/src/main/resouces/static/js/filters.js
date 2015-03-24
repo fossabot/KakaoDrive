@@ -2,7 +2,7 @@
 
 /* Filters */
 
-angular.module('commonFilters', []).filter('bytes', function() {
+angular.module('com.kakao.drive.web.filters', []).filter('bytes', function() {
 	return function(bytes, precision) {
 		if (isNaN(parseFloat(bytes)) || !isFinite(bytes)) return '-';
 		if (typeof precision === 'undefined') precision = 1;

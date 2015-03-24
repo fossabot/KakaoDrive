@@ -20,10 +20,6 @@ directives.directive('flexSplitbar', [ '$document', function($document) {
             }
         };
         
-        console.log(attr);
-        console.log(element);
-        console.log(attr.left);
-        
         element.css({
             width : option.width + option.unit
         });

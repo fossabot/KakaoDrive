@@ -5,11 +5,13 @@
 var baseControllers = angular.module('com.kakao.drive.web.controllers', []);
 
 baseControllers.controller('NavigationController', [ '$scope', 'AccountService', 'OperationService', 'TreeService', function($scope, accountService, operationService, treeService) {
-	$scope.templates = 
-		[ { name: 'Navi 상단', url: 'templates/navi_top.html' },
-		  { name: 'template1.html', url: 'template.html' }];
 	
-	$scope.template = $scope.templates[0];
+	$scope.view = {
+		navi: {
+			top: 'templates/navi_top.html',
+			tree: 'templates/navi_tree.html'
+		}
+	}
 	
 	accountService.getQuota(function() {
 		$scope.quotaInfo = accountService.quota();

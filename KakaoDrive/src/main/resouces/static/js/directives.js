@@ -5,20 +5,33 @@
 
 var directives = angular.module('com.kakao.drive.web.directives', []);
 
-	directives.directive( 'treeView', ['$compile', function( $compile ) {
+	directives.directive( 'treeView', ['$http', '$compile', '$templateCache', function( $http, $compile, $templateCache ) {
 		return {
 			restrict: 'A',
 			replace: true,
 			transclude: true,
 			templateUrl: '/templates/treeview.html',
 			scope: {
-				treeModel: "="
+				treeModel: '=',
 			},
 			link: function(scope, element, attrs) {
+				console.log('e');
 				
 			},
-			compile: function(element, attrs) {
+			compile: function(element, attrs, transclude) {
+				var contents = element.contents().remove();
+				var compiledContents;
+				
+				
 				return function ( scope, element, attrs ) {
+					if(!compiledContents) {
+						compiledContents = $compile(contents, transclude);
+					}
+					
+					compiledContents(scope, function(clone, scope) {
+						element.append(clone); 
+					});
+					
 					scope.$watch("treeModel", function updateNodeOnRootScope(newValue) {
 						console.log(newValue);
 					});

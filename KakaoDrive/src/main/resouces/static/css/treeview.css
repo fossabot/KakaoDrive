@@ -8,6 +8,7 @@ ul.folder-tree {
 	padding: 0px;
 	line-height: 22px;
 	color: #222;
+	margin-left: 15px;
 }
 
 ul.folder-tree li {

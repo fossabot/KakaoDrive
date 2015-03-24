@@ -24,8 +24,9 @@
 		</header>
 		
 		<section id="bodyWrap">
-			<nav id="navigationView" ng-controller="NavigationController" ng-include="template.url">
-			
+			<nav id="navigationView" ng-controller="NavigationController">
+			<div ng-include="view.navi.top"></div>
+			<div ng-include="view.navi.tree"></div>
 			</nav>
 			<div id="navSizeCtrl" flex-splitbar left='navigationView' right='sectionView' ></div>
 			<section id="sectionView" ng-controller="SectionController">

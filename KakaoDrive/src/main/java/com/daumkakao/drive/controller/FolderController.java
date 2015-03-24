@@ -45,6 +45,12 @@ public class FolderController {
 		subFolder3.getChildren().add(subFolder3_1);
 		subFolder3.getChildren().add(subFolder3_2);
 		
+		
+		Folder subFolder3_1_1 = new Folder();
+		subFolder3_1_1.setId("3_1_1");
+		subFolder3_1_1.setName("새폴더 (3) (1) (1)");
+		subFolder3_1.getChildren().add(subFolder3_1_1);
+		
 		return topFolder;
 	}
 }

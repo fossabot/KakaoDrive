@@ -11,7 +11,14 @@ baseControllers.controller('NavigationController', [ '$scope', 'AccountService',
 	
 	$scope.template = $scope.templates[0];
 	
-	accountService.quota($scope.qutoa);
+	accountService.getQuota(function() {
+		$scope.quotaInfo = accountService.quota();
+	});
+	
+	accountService.getShare(function() {
+		$scope.shareInfo = accountService.share();
+	});
+	
 	
 	$scope.upload = function() {
 		console.log('Upload!');

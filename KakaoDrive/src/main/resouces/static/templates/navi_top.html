@@ -1,6 +1,7 @@
 <div>
 	<button ng-click="upload()">파일올리기</button>
 	<button ng-click="share()">공유하기</button>
-	<div>{{ quota.usedSize }} / {{ quota.totalSize }}</div>
+	<div>{{ quotaInfo.usedSize | bytes }} / {{ quotaInfo.totalSize | bytes }}</div>
+	<div>공유초대 {{ shareInfo.length }}건</div>
 </div>
 

@@ -9,8 +9,8 @@ directives.directive('flexSplitbar', [ '$document', function($document) {
         var startX = 0;
         
         var option = {
-            leftElement : null,
-            rightElement : null,
+            leftElement : attr.left,
+            rightElement : attr.right,
             barElement : element,
             minSize : 150,
             maxSize : 500,
@@ -22,9 +22,7 @@ directives.directive('flexSplitbar', [ '$document', function($document) {
         
         console.log(attr);
         console.log(element);
-        
-        console.log(element.previousElementSibling);
-        console.log(element.nextElementSibling);
+        console.log(attr.left);
         
         element.css({
             width : option.width + option.unit
@@ -44,13 +42,20 @@ directives.directive('flexSplitbar', [ '$document', function($document) {
             var x = startX - (startX - event.x) - option.width/2;
             x = Math.min(option.maxSize, Math.max(option.minSize, x));
             
+            $('#' + option.leftElement).css({
+                width: x + option.unit,
+                marginRight: (x*-1) + option.unit
+            });
+            
+            $('#' + option.rightElement).css({
+                marginLeft: x + option.unit
+            });
 
             element.css({
                 left : x + option.unit,
                 opacity : 0.5
             });
-        }
-        ;
+        };
 
         function mouseup() {
             element.css({

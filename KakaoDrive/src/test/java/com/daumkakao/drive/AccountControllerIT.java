@@ -1,10 +1,11 @@
-package hello;
+package com.daumkakao.drive;
 
 import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertThat;
 
 import java.net.URL;
 
+import org.apache.commons.io.FileUtils;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,11 +18,14 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.web.client.RestTemplate;
 
+import com.daumkakao.drive.Application;
+import com.daumkakao.drive.model.Quota;
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Application.class)
 @WebAppConfiguration
 @IntegrationTest({"server.port=0"})
-public class HelloControllerIT {
+public class AccountControllerIT {
 
     @Value("${local.server.port}")
     private int port;
@@ -31,13 +35,15 @@ public class HelloControllerIT {
 
 	@Before
 	public void setUp() throws Exception {
-		this.base = new URL("http://localhost:" + port + "/");
+		this.base = new URL("http://localhost:" + port);
+		
 		template = new TestRestTemplate();
 	}
 
 	@Test
-	public void getHello() throws Exception {
-		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
-		assertThat(response.getBody(), equalTo("Greetings from Spring Boot!"));
+	public void getQuota() throws Exception {
+		URL path = new URL(base, "/account/quota");
+		ResponseEntity<Quota> response = template.getForEntity(path.toString(), Quota.class);
+		assertThat(response.getBody().getTotalSize(), equalTo(FileUtils.ONE_GB * 50));
 	}
 }

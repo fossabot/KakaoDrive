@@ -4,6 +4,23 @@
 
 var commonServices = angular.module('com.kakao.drive.web.services', []);
 
+commonServices.service('AccountService', [ '$http', '$rootScope', function($http, $rootScope) {
+	this.quota = function(quotaInfo) {
+		$http.get("/account/quota", {
+			params : {
+			}
+		}).success(function(response) {
+			console.log(quotaInfo);
+			console.log(response);
+			quotaInfo = response;
+			
+		}).error(function(e) {
+			console.log(e);
+		});
+	}
+	
+}]);
+
 commonServices.service('OperationService', [ '$http', '$rootScope', function($http, $rootScope) {
 //	this.search = function(fileName) {
 //		$http.get("/archive/documents", {

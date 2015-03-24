@@ -1,0 +1,50 @@
+@CHARSET "UTF-8";
+
+
+
+ul.folder-tree {
+	clear: both;
+	margin: 0;
+	padding: 0px;
+	line-height: 22px;
+	color: #222;
+}
+
+ul.folder-tree li {
+	white-space: nowrap;
+}
+
+.icon-head {
+	width: 14px;
+	height: 14px;
+	visibility: hidden;
+	outline: 0;
+	border: 0;
+	margin-right: -5px;
+	background: url("../img/treeview/ico_all_type_v3.gif") no-repeat;
+}
+
+ul.folder-tree li.folder-expanded button.icon-head {
+	background-position: 2px -48px;
+	visibility: visible;
+}
+
+ul.folder-tree li.folder-collapsed button.icon-head {
+	background-position: 2px -98px;
+	visibility: visible;
+}
+
+ul.folder-tree li > span {
+	display: inline-block;
+	padding-left: 22px;
+	color: #222;
+	background: url("../img/treeview/ico_folder_v4.gif") no-repeat 4px 0;
+}
+
+ul.folder-tree li.folder-expanded > span {
+	background-position: 1px -45px;
+}
+
+ul.folder-tree li.folder-collapsed > span {
+	background-position: 1px 5px;
+}

@@ -19,6 +19,10 @@ baseControllers.controller('NavigationController', [ '$scope', 'AccountService',
 		$scope.shareInfo = accountService.share();
 	});
 	
+	treeService.getFolderTree(function() {
+		$scope.folderTree = treeService.folderTree();
+		console.log($scope.folderTree.children);
+	});
 	
 	$scope.upload = function() {
 		console.log('Upload!');

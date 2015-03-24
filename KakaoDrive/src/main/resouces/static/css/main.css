@@ -108,6 +108,24 @@ body {
 	color: #333;
 }
 
+dl, ul, ol, li {
+	list-style: none;
+}
+
+button span {
+	overflow: hidden;
+	position: absolute;
+	top: -10000px;
+}
+
+button {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+	cursor: pointer;
+	vertical-align: middle;
+}
+
 #Head {
 	position: relative;
 	width: 100%;

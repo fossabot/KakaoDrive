@@ -78,22 +78,45 @@ commonServices.service('OperationService', [ '$http', '$rootScope', function($ht
 }]);
 
 
-commonServices.service('TreeService', [ '$http', function($http) {
+commonServices.service('TreeService', [ '$http', '$rootScope', '$q', function($http, $rootScope, $q) {
+	var folderTree;
 	
-//	this.uploadFileToUrl = function(uploadUrl, file) {
-//		var fd = new FormData();
-//		fd.append('file', file);
-//		
-//		$http.post(uploadUrl, fd, {
-//			transformRequest : angular.identity,
-//			headers : {
-//				'Content-Type' : undefined
-//			}
-//		}).success(function() {
-//			archiveService.search(null);
-//		}).error(function() {
-//		});
-//	}
+	this.folderTree = function() {
+		return folderTree;
+	}
+	
+	this.getFolderTree = function(callback) {
+		var option = {
+			url : '/folder/tree',
+			param : {},
+			success : function(response) {
+				folderTree = response;
+			},
+			fail : function(e) {
+				console.log(e);
+				folderTree = {}
+			}
+		}
+		this.HttpCall(option).then(callback);
+	}
+	
+	
+	this.HttpCall = function(option) {
+		var deffered = $q.defer();
+		$http.get(option.url, {
+			params : option.param
+		}).success(function(response) {
+			console.log('request : ' + option.url + ' , ' + JSON.stringify(option.param));
+			option.success(response);
+			console.log('response : ' + JSON.stringify(response));
+			deffered.resolve();
+		}).error(function(e) {
+			option.fail(response);
+			deffered.resolve();
+		});
+		return deffered.promise;
+	}
+
 } ]);
 
 commonServices.service('ExplorerService', [ '$http', function($http) {

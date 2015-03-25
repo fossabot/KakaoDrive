@@ -8,6 +8,7 @@ var app = angular.module('com.kakao.drive.web', [
 	'com.kakao.drive.web.directives',
 	'com.kakao.drive.web.filters',
 	'ui.tree',
+	'ui.tree-filter',
 	'ng-context-menu',
     ]);
 
@@ -18,4 +19,10 @@ app.run(function($rootScope, $http) {
 //	}).success(function(response) {
 //		$rootScope.metadataList = response;
 //	});
+});
+
+app.filter('trust', function ($sce) {
+    return function (val) {
+        return $sce.trustAsHtml(val);
+    };
 });

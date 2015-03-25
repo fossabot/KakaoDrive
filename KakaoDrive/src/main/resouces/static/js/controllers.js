@@ -4,7 +4,7 @@
 
 var baseControllers = angular.module('com.kakao.drive.web.controllers', []);
 
-baseControllers.controller('NavigationController', [ '$scope', 'AccountService', 'OperationService', 'TreeService', function($scope, accountService, operationService, treeService) {
+baseControllers.controller('NavigationController', [ '$scope', '$filter', 'AccountService', 'OperationService', 'TreeService', function($scope, $filter, accountService, operationService, treeService) {
 	
 	$scope.view = {
 		navi: {
@@ -12,6 +12,9 @@ baseControllers.controller('NavigationController', [ '$scope', 'AccountService',
 			tree: 'templates/navi_tree.html'
 		}
 	}
+	
+	$scope.treeFilter = $filter('uiTreeFilter');
+	$scope.filterFields = ['name'];
 	
 	accountService.getQuota(function() {
 		$scope.quotaInfo = accountService.quota();

@@ -10,6 +10,7 @@ var app = angular.module('com.kakao.drive.web', [
 	'ui.tree',
 	'ui.tree-filter',
 	'ng-context-menu',
+	'ngCanvasGauge',
     ]);
 
 app.run(function($rootScope, $http) {

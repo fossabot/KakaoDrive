@@ -1,5 +1,11 @@
 @CHARSET "UTF-8";
 
+.folderTreeWrap {
+	position: relative;
+	padding:0 10px;
+}
+
+
 .angular-ui-tree {
 	text-align: left;
 	font-size: 12px;
@@ -71,13 +77,13 @@ div.angular-ui-tree-handle {
 	visibility: visible;
 }
 
-.angular-ui-tree-handle  span {
+.angular-ui-tree-content  span {
 	padding-left: 22px;
 	color: #222;
 	background: url("../img/treeview/ico_folder_v4.gif") no-repeat 4px 0;
 }
 
-.angular-ui-tree-handle  span {
+.angular-ui-tree-content  span {
 	background-position: 1px -50px;
 }
 

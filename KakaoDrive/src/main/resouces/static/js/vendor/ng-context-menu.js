@@ -71,7 +71,7 @@ angular.module('ng-context-menu', [])
 						//console.log('set', ContextMenuService.element);
 						console.log('selected id : ', scope.selectedId);
 						
-						scope.$emit('selectedIdByContextMenu', scope.selectedId);
+						scope.$emit('selectedIdByContextMenu', scope.$parent.$modelValue);
 						
 						ContextMenuService.menuElement.data({selectedid : scope.selectedId});
 						

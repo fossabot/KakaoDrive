@@ -18,6 +18,7 @@ baseControllers.controller('NavigationController', [ '$scope', '$filter', 'Accou
 	
 	accountService.getQuota(function() {
 		$scope.quotaInfo = accountService.quota();
+		$scope.malestat = (($scope.quotaInfo.usedSize * 100) / $scope.quotaInfo.totalSize).toFixed(2);
 	});
 	
 	accountService.getShare(function() {
@@ -30,62 +31,51 @@ baseControllers.controller('NavigationController', [ '$scope', '$filter', 'Accou
 	
 	$scope.upload = function() {
 		console.log('Upload!');
-		alert('업로드 기능 구현중');
 	};
 	
 	$scope.download = function() {
 		console.log('Download!');
-		alert('다운로드 기능 구현중');
 	};
 	
 	$scope.share = function() {
 		console.log('Share!');
-		alert('공유 기능 구현중');
 	};
 	
 	// contextmenu를 호출할때 선택한 folderid를 가져온다.
-	$scope.$on('selectedIdByContextMenu', function(event, id) {
-		$scope.selectedId = id;
+	$scope.$on('selectedIdByContextMenu', function(event, folder) {
+		$scope.selectedFolder = folder;
 	})
 	
 	$scope.copy = function() {
 		console.log('Copy!');
-		alert('복사 기능 구현중 - folderid : ' + $scope.selectedId );
 	};
 	
 	$scope.cut = function() {
 		console.log('Cut!');
-		alert('잘라내기 기능 구현중 - folderid : ' + $scope.selectedId );
 	};
 	
 	$scope.move = function() {
 		console.log('Move!');
-		alert('이동 기능 구현중 - folderid : ' + $scope.selectedId );
 	};
 	
 	$scope.paste = function() {
 		console.log('Paste!');
-		alert('붙여넣기 기능 구현중 - folderid : ' + $scope.selectedId );
 	};
 	
 	$scope.del = function() {
 		console.log('Del!');
-		alert('삭제 기능 구현중 - folderid : ' + $scope.selectedId );
 	};
 	
 	$scope.rename = function() {
 		console.log('Rename!');
-		alert('이름변경 기능 구현중 - folderid : ' + $scope.selectedId );
 	};
 	
 	$scope.favorite = function() {
 		console.log('Favorite!');
-		alert('즐겨찾기 기능 구현중 - folderid : ' + $scope.selectedId );
 	};
 	
 	$scope.attribute = function() {
 		console.log('Attribute!');
-		alert('속성 기능 구현중 - folderid : ' + $scope.selectedId );
 	};
 	
 	
@@ -101,10 +91,14 @@ baseControllers.controller('NavigationController', [ '$scope', '$filter', 'Accou
 		scope.remove();
 	}
 	
-	$scope.newFolder = function(scope) {
-		var nodeData = scope.$modelValue;
-		nodeData.item.push({
-			id: nodeData.id * 10 + nodeData.items.length,
+
+	
+	
+	$scope.newfolder = function(scope) {
+		console.log('ADD');
+		var nodeData = $scope.selectedFolder
+		nodeData.children.push({
+			id: nodeData.id * 10 + nodeData.children.length,
 			name: nodeData.name + '.' + (nodeData.children.length + 1),
 			children: []
 		});
@@ -123,6 +117,7 @@ baseControllers.controller('NavigationController', [ '$scope', '$filter', 'Accou
 		console.log($scope.panels);
 	}
 	
+	$scope.malestat = 0;
 }]);
 
 

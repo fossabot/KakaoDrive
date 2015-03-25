@@ -1,12 +1,21 @@
-<div style="text-align: left">
+<div class="naviTop" style="text-align: left">
 
-	<div class="button raised blue">
-		<div class="center" fit>Upload</div>
-		<paper-ripple fit></paper-ripple>
+	<div>
+		<div class="button raised blue btn_upload" ng-click="upload()">
+			<div class="center" fit><i class="icon fa-cloud-upload"> </i>Upload</div>
+			<paper-ripple fit></paper-ripple>
+		</div>
+		
+		<div class="button raised blue btn_share" ng-click="share()">
+			<div class="center" fit><i class="icon fa-share-alt"> </i>Share</div>
+			<paper-ripple fit></paper-ripple>
+		</div>
 	</div>
-
-	<button ng-click="upload()">파일올리기</button>
-	<button ng-click="share()">공유하기</button>
+	<div>
+		<div canvas-gauge width="220" under-color="#EFEFEF" over-color="#6495ED" value="malestat" mask="(@)%"
+style="color: gray">
+		</div>
+	</div>
 	<div>{{ quotaInfo.usedSize | bytes }} / {{ quotaInfo.totalSize | bytes }}</div>
 	<div>공유초대 {{ shareInfo.length }}건</div>
 	

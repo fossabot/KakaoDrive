@@ -1,4 +1,10 @@
 <div style="text-align: left">
+
+	<div class="button raised blue">
+		<div class="center" fit>Upload</div>
+		<paper-ripple fit></paper-ripple>
+	</div>
+
 	<button ng-click="upload()">파일올리기</button>
 	<button ng-click="share()">공유하기</button>
 	<div>{{ quotaInfo.usedSize | bytes }} / {{ quotaInfo.totalSize | bytes }}</div>

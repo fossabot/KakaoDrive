@@ -30,10 +30,61 @@ baseControllers.controller('NavigationController', [ '$scope', 'AccountService',
 		alert('업로드 기능 구현중');
 	};
 	
+	$scope.download = function() {
+		console.log('Download!');
+		alert('다운로드 기능 구현중');
+	};
+	
 	$scope.share = function() {
 		console.log('Share!');
 		alert('공유 기능 구현중');
 	};
+	
+	// contextmenu를 호출할때 선택한 folderid를 가져온다.
+	$scope.$on('selectedIdByContextMenu', function(event, id) {
+		$scope.selectedId = id;
+	})
+	
+	$scope.copy = function() {
+		console.log('Copy!');
+		alert('복사 기능 구현중 - folderid : ' + $scope.selectedId );
+	};
+	
+	$scope.cut = function() {
+		console.log('Cut!');
+		alert('잘라내기 기능 구현중 - folderid : ' + $scope.selectedId );
+	};
+	
+	$scope.move = function() {
+		console.log('Move!');
+		alert('이동 기능 구현중 - folderid : ' + $scope.selectedId );
+	};
+	
+	$scope.paste = function() {
+		console.log('Paste!');
+		alert('붙여넣기 기능 구현중 - folderid : ' + $scope.selectedId );
+	};
+	
+	$scope.del = function() {
+		console.log('Del!');
+		alert('삭제 기능 구현중 - folderid : ' + $scope.selectedId );
+	};
+	
+	$scope.rename = function() {
+		console.log('Rename!');
+		alert('이름변경 기능 구현중 - folderid : ' + $scope.selectedId );
+	};
+	
+	$scope.favorite = function() {
+		console.log('Favorite!');
+		alert('즐겨찾기 기능 구현중 - folderid : ' + $scope.selectedId );
+	};
+	
+	$scope.attribute = function() {
+		console.log('Attribute!');
+		alert('속성 기능 구현중 - folderid : ' + $scope.selectedId );
+	};
+	
 	
 	$scope.toggle = function(scope) {
 		scope.toggle();
@@ -56,7 +107,18 @@ baseControllers.controller('NavigationController', [ '$scope', 'AccountService',
 		});
 	};
 	
-	
+	$scope.onRightClick = function(scope) {
+		//console.log(scope.$modelValue);
+	};
+
+	$scope.onClose = function (msg) {
+		console.log(msg);
+	};
+
+	$scope.recreatePanels = function() {
+		$scope.panels = angular.copy($scope.panels);
+		console.log($scope.panels);
+	}
 	
 }]);
 

@@ -5,43 +5,10 @@
 
 var directives = angular.module('com.kakao.drive.web.directives', []);
 
-	directives.directive( 'treeView', ['$http', '$compile', '$templateCache', function( $http, $compile, $templateCache ) {
-		return {
-			restrict: 'A',
-			replace: true,
-			transclude: true,
-			templateUrl: '/templates/treeview.html',
-			scope: {
-				treeModel: '=',
-			},
-			compile: function(element, attrs, transclude) {
-				var contents = element.contents().remove();
-				var compiledContents;
-				
-				
-				
-				return function ( scope, element, attrs ) {
-					if(!compiledContents) {
-						compiledContents = $compile(contents, transclude);
-					}
-					
-					compiledContents(scope, function(clone, scope) {
-						element.append(clone); 
-					});
-					
-					scope.expand = function() {
-						
-						console.log('Expand');
-					}
-					
-					scope.$watch("treeModel", function updateNodeOnRootScope(newValue) {
-						console.log(newValue);
-					});
-				}
-			}
-		};
-	}]);
 
+	
+	
+	// 창 분할 크기 조절바
 	directives.directive('flexSplitbar', [ '$document', function($document) {
 		return function(socpe, element, attr) {
 			var startX = 0;

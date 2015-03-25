@@ -178,7 +178,7 @@ button {
 	z-index: 999;
 }
 
-#bodyWrap > section:after {
+#bodyWrap > nav:after, #bodyWrap > section:after {
 	content:" "; 
 	display:block; 
 	clear:both;

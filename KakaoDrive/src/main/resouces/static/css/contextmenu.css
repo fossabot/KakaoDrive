@@ -1,0 +1,41 @@
+@CHARSET "UTF-8";
+
+.contextMenu {
+	text-align: left;
+	z-index: 1000;
+}
+
+.contextMenu ul {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	float: left;
+	min-width: 100px;
+	padding: 5px 0px 0px 0px;
+	margin: 2px 0 0;
+	list-style: none;
+	background-color: #fff;
+	border: 1px solid #565964;
+	background-clip: padding-box;
+	display: none;
+}
+.contextMenu ul li {
+	padding: 0px 5px;
+	height: 22px;
+	line-height: 22px;
+}
+
+.contextMenu ul li:hover {
+	cursor: pointer;
+	color: #fff;
+	background-color: #3498db;
+}
+
+.contextMenu li.underline {
+	border-bottom: 1px solid #e5e5e5;
+}
+
+
+.open ul {
+	display: block;
+}

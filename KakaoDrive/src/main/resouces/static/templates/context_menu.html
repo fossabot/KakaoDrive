@@ -1,0 +1,7 @@
+<ul class="folder-tree">
+	<li class="folder-expanded" data-ng-repeat="node in treeModel.children">
+		<button class="icon-head" ng-click="expand()"><span>열기</span></button>
+		<span>{{ node.name }}</span>
+		<div tree-view tree-model="node"></div>
+	</li>
+</ul>

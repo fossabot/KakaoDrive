@@ -18,7 +18,7 @@ baseControllers.controller('NavigationController', [ '$scope', '$filter', 'Accou
 	
 	accountService.getQuota(function() {
 		$scope.quotaInfo = accountService.quota();
-		$scope.malestat = (($scope.quotaInfo.usedSize * 100) / $scope.quotaInfo.totalSize).toFixed(2);
+		$scope.quotaPercent = (($scope.quotaInfo.usedSize * 100) / $scope.quotaInfo.totalSize).toFixed(2);
 	});
 	
 	accountService.getShare(function() {
@@ -117,7 +117,7 @@ baseControllers.controller('NavigationController', [ '$scope', '$filter', 'Accou
 		console.log($scope.panels);
 	}
 	
-	$scope.malestat = 0;
+	$scope.quotaPercent = 0;
 }]);
 
 

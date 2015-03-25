@@ -12,7 +12,12 @@
             restrict: 'A',
             replace: true,
             template:  '<canvas></canvas>',
-            scope: { val: '=value' },
+            scope: {
+            	val: '=value',
+            	minVal: '=min',
+            	maxVal: '=max'
+            		
+            },
             link: function($scope, element, attrs) {  
 
                 var width = parseInt(attrs.width || '100');
@@ -75,7 +80,8 @@
                         ctx.shadowOffsetX = 1;
                         ctx.shadowOffsetY = 1;   
                         ctx.shadowBlur = 0;     
-                        ctx.fillText(mask.replace(placeholder, parseFloat(value.toFixed(2)).toString()), x, y);
+                        
+                        ctx.fillText(prettyValue(value), x, y);
 
                         if (canvas.width > 119) { 
                             y = (canvas.width / 2.2) + calcPercent(canvas.height, 10) + (canvas.width / 100) - 1;   
@@ -90,18 +96,25 @@
                             x = canvas.width - (pad);
                             ctx.font = 'normal ' + (fontSize / 2) + 'pt Calibri';
                             ctx.fillStyle = $scope.smallTextColor;
-                            ctx.fillText($scope.max, x, y);      
+                            ctx.fillText(prettyValue($scope.max), x, y);      
                         }    
                     }
                 }
+                
+                var prettyValue = function(bytes, precision) {
+                	if (isNaN(parseFloat(bytes)) || !isFinite(bytes)) return '-';
+            		if (typeof precision === 'undefined') precision = 1;
+            		var units = ['bytes', 'kB', 'MB', 'GB', 'TB', 'PB'],
+            			number = Math.floor(Math.log(bytes) / Math.log(1024));
+            		return (bytes / Math.pow(1024, Math.floor(number))).toFixed(precision) +  ' ' + units[number];
+                };
 
                 var animate = function() {
 
                     var flag = direction == 1 ? (curValue <= endValue) : (curValue >= endValue); 
                     if (flag == true) {
                         render(curValue);
-
-                        curValue += direction;
+                        curValue += direction*(endValue/24);
                         animID = requestAnimationFrame(animate);
                     } else {
                         oldValue = endValue;
@@ -127,7 +140,8 @@
                 $scope.$watch('val', function(newval, oldval) { 
 
                     $scope.min = attrs.min || 0;
-                    $scope.max = attrs.max || 100;
+                    $scope.max = $scope.maxVal || 100;
+                    
                     $scope.underColor = attrs.underColor || '#EFEFEF';
                     $scope.overColor = attrs.overColor || '#000';
                     $scope.textColor = attrs.textColor || $scope.overColor

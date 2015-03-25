@@ -12,11 +12,9 @@
 		</div>
 	</div>
 	<div>
-		<div canvas-gauge width="220" under-color="#EFEFEF" over-color="#6495ED" value="malestat" mask="(@)%"
-style="color: gray">
+		<div canvas-gauge width="160" under-color="#EFEFEF" over-color="#039BE5" max="quotaInfo.totalSize" value="quotaInfo.usedSize" style="color: gray">
 		</div>
 	</div>
-	<div>{{ quotaInfo.usedSize | bytes }} / {{ quotaInfo.totalSize | bytes }}</div>
 	<div>공유초대 {{ shareInfo.length }}건</div>
 	
 </div>

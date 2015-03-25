@@ -1,24 +1,22 @@
 @CHARSET "UTF-8";
 
-.nav-tree {
+.angular-ui-tree {
 	text-align: left;
-	
+	font-size: 12px;
+	font-family: "돋움",dotum,sans-serif;
 }
 
-.nav-tree > ul.folder-tree {
-	margin-left: 0;
+.btn {
+	margin-right: 20px;
+	outline: 0;
+	border: 0;
 }
 
-ul.folder-tree {
-	clear: both;
-	margin: 0;
-	padding: 0px;
-	line-height: 22px;
-	color: #222;
-	margin-left: 15px;
-}
-
-ul.folder-tree li {
+div.angular-ui-tree-handle {
+	background: #f8faff;
+	border: 1px solid #dae2ea;
+	font-weight: normal;
+	padding: 5px 7px;
 	word-break:break-all;
 	white-space: nowrap;
 	overflow: hidden;
@@ -28,33 +26,82 @@ ul.folder-tree li {
 	-moz-binding:url(/xe/ellipsis.xml#ellipsis)
 }
 
-.icon-head {
+.angular-ui-tree-handle:hover {
+	color: #438eb9;
+	background: #f4f6f7;
+	border-color: #dce2e8;
+}
+
+.angular-ui-tree-placeholder {
+	background: #f0f9ff;
+	border: 2px dashed #bed2db;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+.group-title {
+	background-color: #687074 !important;
+	color: #FFF !important;
+}
+
+.tree-head {
 	width: 14px;
 	height: 14px;
 	visibility: hidden;
-	outline: 0;
-	border: 0;
 	margin-right: -5px;
 	background: url("../img/treeview/ico_all_type_v3.gif") no-repeat;
 }
 
-ul.folder-tree li.folder-expanded button.icon-head {
+.tree-blank-head {
+	width: 14px;
+	height: 14px;
+	visibility: hidden;
+	margin-right: -5px;
+}
+
+.tree-head-collapse {
 	background-position: 2px -48px;
 	visibility: visible;
 }
 
-ul.folder-tree li.folder-collapsed button.icon-head {
+.tree-head-expand {
 	background-position: 2px -98px;
 	visibility: visible;
 }
 
-ul.folder-tree li > span {
+.angular-ui-tree-handle  span {
 	padding-left: 22px;
 	color: #222;
 	background: url("../img/treeview/ico_folder_v4.gif") no-repeat 4px 0;
 }
 
-ul.folder-tree li.folder-expanded > span {
+.angular-ui-tree-handle  span {
+	background-position: 1px -50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.angular-ui-tree-handle a.icon-head span {
 	background-position: 1px -50px;
 }
 

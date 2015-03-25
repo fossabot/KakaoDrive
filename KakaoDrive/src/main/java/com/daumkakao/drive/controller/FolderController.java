@@ -1,5 +1,7 @@
 package com.daumkakao.drive.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -17,7 +19,7 @@ public class FolderController {
 	
 	
 	@RequestMapping("/tree")
-	public Folder getTopFolder(HttpServletRequest request, HttpServletResponse response) {
+	public List<Folder> getTopFolder(HttpServletRequest request, HttpServletResponse response) {
 		
 		Folder topFolder = new Folder();
 		
@@ -51,6 +53,6 @@ public class FolderController {
 		subFolder3_1_1.setName("새폴더 (3) (1) (1)");
 		subFolder3_1.getChildren().add(subFolder3_1_1);
 		
-		return topFolder;
+		return topFolder.getChildren();
 	}
 }

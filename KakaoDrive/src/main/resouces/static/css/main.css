@@ -175,6 +175,7 @@ button {
 	margin-left: 200px;
 	background: #ffffee;
 	height: 500px;
+	z-index: 999;
 }
 
 #bodyWrap > section:after {

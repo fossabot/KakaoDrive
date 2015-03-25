@@ -23,7 +23,6 @@ baseControllers.controller('NavigationController', [ '$scope', 'AccountService',
 	
 	treeService.getFolderTree(function() {
 		$scope.folderTree = treeService.folderTree();
-		console.log($scope.folderTree.children);
 	});
 	
 	$scope.upload = function() {
@@ -35,6 +34,30 @@ baseControllers.controller('NavigationController', [ '$scope', 'AccountService',
 		console.log('Share!');
 		alert('공유 기능 구현중');
 	};
+	
+	$scope.toggle = function(scope) {
+		scope.toggle();
+	};
+	
+	$scope.selectedItem = {};
+	
+	$scope.options = {};
+	
+	$scope.remove = function(scope) {
+		scope.remove();
+	}
+	
+	$scope.newFolder = function(scope) {
+		var nodeData = scope.$modelValue;
+		nodeData.item.push({
+			id: nodeData.id * 10 + nodeData.items.length,
+			name: nodeData.name + '.' + (nodeData.children.length + 1),
+			children: []
+		});
+	};
+	
+	
+	
 }]);
 
 

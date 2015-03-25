@@ -26,7 +26,7 @@ public class FolderController {
 		subFolder1.setName("새폴더");
 		Folder subFolder2 = new Folder();
 		subFolder2.setId("2");
-		subFolder2.setName("새폴더 (2)");
+		subFolder2.setName("새폴더 (2)----------------------------");
 		Folder subFolder3 = new Folder();
 		subFolder3.setId("3");
 		subFolder3.setName("새폴더 (3)");

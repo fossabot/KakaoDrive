@@ -14,13 +14,10 @@ var directives = angular.module('com.kakao.drive.web.directives', []);
 			scope: {
 				treeModel: '=',
 			},
-			link: function(scope, element, attrs) {
-				console.log('e');
-				
-			},
 			compile: function(element, attrs, transclude) {
 				var contents = element.contents().remove();
 				var compiledContents;
+				
 				
 				
 				return function ( scope, element, attrs ) {
@@ -31,6 +28,11 @@ var directives = angular.module('com.kakao.drive.web.directives', []);
 					compiledContents(scope, function(clone, scope) {
 						element.append(clone); 
 					});
+					
+					scope.expand = function() {
+						
+						console.log('Expand');
+					}
 					
 					scope.$watch("treeModel", function updateNodeOnRootScope(newValue) {
 						console.log(newValue);

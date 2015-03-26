@@ -28,7 +28,7 @@ public class AccountController {
 		Quota quota = new Quota();
 		
 		quota.setTotalSize(FileUtils.ONE_GB * 50);
-		quota.setUsedSize(FileUtils.ONE_GB * 45);
+		quota.setUsedSize(FileUtils.ONE_GB * 45 + FileUtils.ONE_MB * 230);
 		
 		return quota;
 	}

@@ -4,9 +4,39 @@
 	text-align: left;
 }
 
-.naviTop {
-	padding: 10px;
+.naviTop, .treeTop {
+	padding: 10px 10px 0 10px;
 }
 #navigationView .btn_upload, #navigationView .btn_share {
 	width: 113px;
+}
+
+div.quotaDiv {
+	width: 230px;
+	height: 110px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+div.shareInfoDiv {
+	width: 230px;
+	height: 25px;
+	text-align: center;
+	padding-top: 10px;
+	position: relative;
+}
+
+
+div.folderTreeWrap {
+	width: 230px;
+}
+
+div.folderTreeWrap > div {
+	position: relative;
+}
+
+div.folderTreeWrap > div:after {
+	content:" "; 
+	display:block; 
+	clear:both;
 }

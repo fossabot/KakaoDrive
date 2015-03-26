@@ -2,7 +2,6 @@
 
 .folderTreeWrap {
 	position: relative;
-	padding:0 10px;
 }
 
 
@@ -18,9 +17,10 @@
 	border: 0;
 }
 
+
 div.angular-ui-tree-handle {
-	background: #f8faff;
-	border: 1px solid #dae2ea;
+	border-left: 5px solid #039BE5;
+	border-bottom: 1px solid #eee;
 	font-weight: normal;
 	padding: 5px 7px;
 	word-break:break-all;
@@ -40,7 +40,7 @@ div.angular-ui-tree-handle {
 
 .angular-ui-tree-placeholder {
 	background: #f0f9ff;
-	border: 2px dashed #bed2db;
+	border: 1px dashed #bed2db;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -88,12 +88,17 @@ div.angular-ui-tree-handle {
 }
 
 .treeSearchWrap {
-	padding: 5px;
-	margin-right: 5px;
+	margin-right: 7px;
 	position: relative;
 }
 .treeSearch {
+	border-top: 0 solid #fff;
+	border-left: 0 solid #fff;
+	border-right: 0 solid #fff;
 	width: 100%;
+	height: 25px;
+	line-height: 25px;
+	padding-left: 5px;
 }
 
 

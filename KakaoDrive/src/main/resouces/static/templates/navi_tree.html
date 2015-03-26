@@ -17,7 +17,20 @@
 	</script>
 	
 	<div class="folderTreeWrap card">
-		<div ui-tree="options" data-drag-enabled="!search.length">
+		<div ui-tree="options" data-drag-enabled="dragEnabled || !search.length">
+			<div ui-tree-placeholder class="treeLock" ng-click="toggleTreeLock(this)">
+				<i data-nodrag class="icon fa-lock" ng-if="!dragEnabled"></i>
+				<i data-nodrag class="icon fa-unlock" ng-if="dragEnabled"></i>
+				<paper-ripple class="recenteringTouch" fit></paper-ripple>
+			</div>
+			<div ui-tree-placeholder class="collapseAll" ng-click="collapseAll(this)">
+				<i data-nodrag class="icon fa-minus-square-o"></i>
+				<paper-ripple class="recenteringTouch" fit></paper-ripple>
+			</div>
+			<div ui-tree-placeholder class="expandAll" ng-click="expandAll(this)">
+				<i data-nodrag class="icon fa-plus-square-o"></i>
+				<paper-ripple class="recenteringTouch" fit></paper-ripple>
+			</div>
 			<div class="treeSearchWrap">
 				<input type="search" placeholder="폴더명 검색" ng-model="search" class="treeSearch">
 			</div>
@@ -27,20 +40,58 @@
 		</div>
 	</div>
 	
-	<div id="menu" class='contextMenu' style="position: fixed;">
-		<ul>
-			<li ng-click="newfolder()">새폴더</li>
-			<li ng-click="upload()">파일올리기</li>
-			<li ng-click="download()"class='underline'>내려받기</li>
-			<li ng-click="share()" class='underline'>공유하기</li>
-			<li ng-click="cut()" >잘라내기</li>
-			<li ng-click="move()" >이동</li>
-			<li ng-click="copy()">복사</li>
-			<li ng-click="paste()" class='underline'>붙여넣기</li>
-			<li ng-click="del()" >삭제</li>
-			<li ng-click="rename()"  class='underline'>이름변경</li>
-			<li ng-click="favorite()" class='underline'>중요 표시하기</li>
-			<li ng-click="attribute()" >속성</li>
-		</ul>
+	
+	
+	
+	<div id="menu" class='contextMenu menu blue' style="position: fixed;">
+		<div class="item" ng-click="newfolder()">
+			<div class="label" fit>새폴더</div>
+			<paper-ripple fit></paper-ripple>
+		</div>
+		<div class="item" ng-click="upload()">
+			<div class="label" fit>파일올리기</div>
+			<paper-ripple fit></paper-ripple>
+		</div>
+		<div class="item underline" ng-click="download()">
+			<div class="label" fit>내려받기</div>
+			<paper-ripple fit></paper-ripple>
+		</div>
+		<div class="item underline" ng-click="share()">
+			<div class="label" fit>공유하기</div>
+			<paper-ripple fit></paper-ripple>
+		</div>
+		<div class="item" ng-click="cut()">
+			<div class="label" fit>잘라내기</div>
+			<paper-ripple fit></paper-ripple>
+		</div>
+		<div class="item" ng-click="move()">
+			<div class="label" fit>이동</div>
+			<paper-ripple fit></paper-ripple>
+		</div>
+		<div class="item" ng-click="newfolder()">
+			<div class="label" fit>복사</div>
+			<paper-ripple fit></paper-ripple>
+		</div>
+		<div class="item underline" ng-click="paste()">
+			<div class="label" fit>붙여넣기</div>
+			<paper-ripple fit></paper-ripple>
+		</div>
+		<div class="item" ng-click="del()">
+			<div class="label" fit>삭제</div>
+			<paper-ripple fit></paper-ripple>
+		</div>
+		<div class="item underline" ng-click="rename()">
+			<div class="label" fit>이름변경</div>
+			<paper-ripple fit></paper-ripple>
+		</div>
+		<div class="item underline" ng-click="favorite()">
+			<div class="label" fit>중요 표시하기</div>
+			<paper-ripple fit></paper-ripple>
+		</div>
+		<div class="item" ng-click="attribute()">
+			<div class="label" fit>속성</div>
+			<paper-ripple fit></paper-ripple>
+		</div>
+		
 	</div>
 </div>

@@ -127,18 +127,23 @@
 
 /* Menu */
 .menu {
-	display: inline-block;
-	width: 180px;
+	width: 120px;
 	background-color: #fff;
 	box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
 }
 
 .item {
+	cursor: pointer;
 	position: relative;
-	height: 48px;
-	line-height: 48px;
+	height: 26px;
+	line-height: 26px;
 	color: #646464;
 	font-size: 0.9em;
+}
+
+.item:hover {
+	font-weight: bold;
+	background-color: #BBDEFB;
 }
 
 .menu.blue>.item {

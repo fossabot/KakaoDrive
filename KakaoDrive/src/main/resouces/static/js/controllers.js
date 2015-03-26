@@ -91,6 +91,16 @@ baseControllers.controller('NavigationController', [ '$scope', '$filter', 'Accou
 		scope.remove();
 	}
 	
+	$scope.treeLocked = true;
+	
+	$scope.toggleTreeLock = function(scope) {
+		scope.treeLocked = !scope.treeLocked;
+		scope.dragEnabled = !scope.treeLocked;
+		console.log('dragEnabled : ' + scope.dragEnabled);
+	}
+	
+	
+	
 
 	
 	

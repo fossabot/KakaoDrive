@@ -115,6 +115,10 @@ body {
 	-webkit-touch-callout: none;
 }
 
+*:focus {
+	outline: 0;
+}
+
 dl, ul, ol, li {
 	list-style: none;
 }

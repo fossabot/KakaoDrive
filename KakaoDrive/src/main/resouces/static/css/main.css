@@ -7,7 +7,16 @@
 .naviTop, .treeTop {
 	padding: 10px 10px 0 10px;
 }
-#navigationView .btn_upload, #navigationView .btn_share {
+#navigationView .btn_upload {
+	float: left;
+}
+
+#navigationView .btn_share {
+	float: right;
+}
+
+#navigationView .btn_upload, 
+#navigationView .btn_share {
 	width: 113px;
 	font-size: 14px;
 	font-weight: 600;
@@ -16,7 +25,7 @@
 div.quotaDiv {
 	width: 230px;
 	height: 110px;
-	margin-bottom: 10px;
+	margin: 10px 0;
 	text-align: center;
 }
 

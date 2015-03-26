@@ -302,9 +302,18 @@
         $scope.$emptyElm = null;
         $scope.$callbacks = null;
 
-        $scope.dragEnabled = true;
+        $scope.dragEnabled = false;
+        $scope.treeLocked = true;
         $scope.maxDepth = 0;
         $scope.dragDelay = 0;
+        
+        $scope.$watch('search', function(val) {
+        	if (val == null || val.length) {
+        		$scope.dragEnabled = !($scope.treeLocked || true);
+        	} else {
+        		$scope.dragEnabled = !($scope.treeLocked || false);
+        	}
+    	});
 
         // Check if it's a empty tree
         $scope.isEmpty = function() {
@@ -663,20 +672,20 @@
           };
 
           callbacks.dropped = function(event) {
-
+        	  //console.log('callback dropped!')
           };
 
           //
           callbacks.dragStart = function(event) {
-
+        	  //console.log('callback dragStart!')
           };
 
           callbacks.dragMove = function(event) {
-
+        	  //console.log('callback dragMove!')
           };
 
           callbacks.dragStop = function(event) {
-
+        	  //console.log('callback dragStop!')
           };
 
           scope.$watch(attrs.uiTree, function(newVal, oldVal){
@@ -790,6 +799,8 @@
               $uiTreeHelper.setNodeAttribute(scope, 'collapsed', val);
               attrs.$set('collapsed', val);
             });
+            
+            
 
             var hasTouch = 'ontouchstart' in window;
             // todo startPos is unused

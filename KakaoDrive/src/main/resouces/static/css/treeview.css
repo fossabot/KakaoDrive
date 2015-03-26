@@ -20,6 +20,7 @@
 
 
 div.angular-ui-tree-handle {
+	background: #fff;
 	border-left: 5px solid #039BE5;
 	border-bottom: 1px solid #eee;
 	font-weight: normal;
@@ -105,7 +106,7 @@ div.angular-ui-tree-handle i.fa-folder-open {
 }
 
 .treeSearchWrap {
-	margin-right: 7px;
+	margin-right: 77px;
 	position: relative;
 }
 .treeSearch {
@@ -115,6 +116,46 @@ div.angular-ui-tree-handle i.fa-folder-open {
 	height: 25px;
 	line-height: 25px;
 	padding-left: 5px;
+	padding-right: 72px;
+}
+
+.treeLock {
+	background: #BBDEFB;
+	cursor: pointer;
+	width: 24px;
+	position: absolute;
+	height: 27px;
+	line-height: 27px;
+	text-align: center;
+	right: 0px;
+	top: 0px;
+	z-index: 11;
+}
+
+.collapseAll {
+	background: #E3F2FD;
+	cursor: pointer;
+	width: 24px;
+	position: absolute;
+	height: 27px;
+	line-height: 27px;
+	text-align: center;
+	right: 24px;
+	top: 0px;
+	z-index: 11;
+}
+
+.expandAll {
+	background: #BBDEFB;
+	cursor: pointer;
+	width: 24px;
+	position: absolute;
+	height: 27px;
+	line-height: 27px;
+	text-align: center;
+	right: 48px;
+	top: 0px;
+	z-index: 11;
 }
 
 

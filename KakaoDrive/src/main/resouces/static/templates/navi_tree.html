@@ -17,18 +17,18 @@
 	</script>
 	
 	<div class="folderTreeWrap card">
-		<div ui-tree="options" data-drag-enabled="dragEnabled || !search.length">
-			<div ui-tree-placeholder class="treeLock" ng-click="toggleTreeLock(this)">
-				<i data-nodrag class="icon fa-lock" ng-if="!dragEnabled"></i>
-				<i data-nodrag class="icon fa-unlock" ng-if="dragEnabled"></i>
-				<paper-ripple class="recenteringTouch" fit></paper-ripple>
-			</div>
-			<div ui-tree-placeholder class="collapseAll" ng-click="collapseAll(this)">
+		<div ui-tree="options">
+			<div ui-tree-placeholder class="tree-ctl collapseAll" ng-click="collapseAll(this)">
 				<i data-nodrag class="icon fa-minus-square-o"></i>
 				<paper-ripple class="recenteringTouch" fit></paper-ripple>
 			</div>
-			<div ui-tree-placeholder class="expandAll" ng-click="expandAll(this)">
+			<div ui-tree-placeholder class="tree-ctl expandAll" ng-click="expandAll(this)">
 				<i data-nodrag class="icon fa-plus-square-o"></i>
+				<paper-ripple class="recenteringTouch" fit></paper-ripple>
+			</div>
+			<div ui-tree-placeholder class="tree-ctl treeLock" ng-click="toggleTreeLock(this)">
+				<i data-nodrag class="icon fa-lock" ng-if="!dragEnabled"></i>
+				<i data-nodrag class="icon fa-unlock" ng-if="dragEnabled"></i>
 				<paper-ripple class="recenteringTouch" fit></paper-ripple>
 			</div>
 			<div class="treeSearchWrap">

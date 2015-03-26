@@ -117,36 +117,29 @@ div.angular-ui-tree-handle i.fa-folder-open {
 	line-height: 25px;
 	padding-left: 5px;
 	padding-right: 72px;
+	background: #03A9F4;
+	color: #fff;
 }
 
-.treeLock {
-	background: #E3F2FD;
-	cursor: pointer;
-	width: 24px;
-	position: absolute;
-	height: 27px;
-	line-height: 27px;
-	text-align: center;
-	right: 0px;
-	top: 0px;
-	z-index: 11;
+
+::-webkit-input-placeholder { /* WebKit browsers */
+	color:	#E3F2FD;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	color: #E3F2FD;
+	opacity: 1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+	color: #E3F2FD;
+	opacity: 1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+	color: #E3F2FD;
 }
 
-.collapseAll {
-	background: #E3F2FD;
-	cursor: pointer;
-	width: 24px;
-	position: absolute;
-	height: 27px;
-	line-height: 27px;
-	text-align: center;
-	right: 24px;
-	top: 0px;
-	z-index: 11;
-}
-
-.expandAll {
-	background: #E3F2FD;
+.tree-ctl {
+	background: #039BE5;
+	color: #fff;
 	cursor: pointer;
 	width: 24px;
 	position: absolute;
@@ -154,8 +147,20 @@ div.angular-ui-tree-handle i.fa-folder-open {
 	line-height: 27px;
 	text-align: center;
 	right: 48px;
+	z-index: 2;
 	top: 0px;
-	z-index: 11;
+}
+
+.collapseAll {
+	right: 48px;
+}
+
+.expandAll {
+	right: 24px;
+}
+
+.treeLock {
+	right: 0px;
 }
 
 

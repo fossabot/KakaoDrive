@@ -1,46 +1,46 @@
 <div class="treeTop">
-<!-- Nested node template -->
-<script type="text/ng-template" id="nodes_renderer.html">
-	<div ui-tree-handle>
-		<i data-nodrag class="icon fa-minus-circle" ng-if="folder.children.length" ng-click="toggle(this)" ng-class="{'fa-minus-circle': !collapsed, 'fa-plus-circle': collapsed}"> </i>
-		<button class="btn tree-blank-head" ng-if="!folder.children.length"></button>
-		<span>
-			<i data-nodrag class="icon fa-folder" ng-if="!folder.children.length || collapsed"> </i>
-			<i data-nodrag class="icon fa-folder-open" ng-if="folder.children.length && !collapsed"> </i>
-			{{ folder.name }}
-		</span>
-	</div>
-	<ol ui-tree-nodes="options" ng-model="folder.children" ng-class="{hidden: collapsed}">
-		<li ng-repeat="folder in folder.children" ui-tree-node ng-hide="!treeFilter(folder, search, filterFields)" ng-include="'nodes_renderer.html'" context-menu="onRightClick(this)" data-target="menu" collapsed="false">
-		</li>
-	</ol>
-</script>
-
-<div class="folderTreeWrap card">
-	<div ui-tree="options" data-drag-enabled="!search.length">
-		<div class="treeSearchWrap">
-			<input type="search" placeholder="폴더명 검색" ng-model="search" class="treeSearch">
+	<!-- Nested node template -->
+	<script type="text/ng-template" id="nodes_renderer.html">
+		<div ui-tree-handle>
+			<i data-nodrag class="icon fa-minus-circle" ng-if="folder.children.length" ng-click="toggle(this)" ng-class="{'fa-minus-circle': !collapsed, 'fa-plus-circle': collapsed}"> </i>
+			<button class="btn tree-blank-head" ng-if="!folder.children.length"></button>
+			<span>
+				<i data-nodrag class="icon fa-folder" ng-if="!folder.children.length || collapsed"> </i>
+				<i data-nodrag class="icon fa-folder-open" ng-if="folder.children.length && !collapsed"> </i>
+				{{ folder.name }}
+			</span>
 		</div>
-		<ol ui-tree-nodes ng-model="folderTree">
-			<li ng-repeat="folder in folderTree" ui-tree-node ng-hide="!treeFilter(folder, search, filterFields)" ng-include="'nodes_renderer.html'" context-menu="onRightClick(this)" data-target="menu" collapsed="false"></li>
+		<ol ui-tree-nodes="options" ng-model="folder.children" ng-class="{hidden: collapsed}">
+			<li ng-repeat="folder in folder.children" ui-tree-node ng-hide="!treeFilter(folder, search, filterFields)" ng-include="'nodes_renderer.html'" context-menu="onRightClick(this)" data-target="menu" collapsed="false">
+			</li>
 		</ol>
+	</script>
+	
+	<div class="folderTreeWrap card">
+		<div ui-tree="options" data-drag-enabled="!search.length">
+			<div class="treeSearchWrap">
+				<input type="search" placeholder="폴더명 검색" ng-model="search" class="treeSearch">
+			</div>
+			<ol ui-tree-nodes ng-model="folderTree">
+				<li ng-repeat="folder in folderTree" ui-tree-node ng-hide="!treeFilter(folder, search, filterFields)" ng-include="'nodes_renderer.html'" context-menu="onRightClick(this)" data-target="menu" collapsed="false"></li>
+			</ol>
+		</div>
 	</div>
-</div>
-
-<div id="menu" class='contextMenu' style="position: fixed;">
-	<ul>
-		<li ng-click="newfolder()">새폴더</li>
-		<li ng-click="upload()">파일올리기</li>
-		<li ng-click="download()"class='underline'>내려받기</li>
-		<li ng-click="share()" class='underline'>공유하기</li>
-		<li ng-click="cut()" >잘라내기</li>
-		<li ng-click="move()" >이동</li>
-		<li ng-click="copy()">복사</li>
-		<li ng-click="paste()" class='underline'>붙여넣기</li>
-		<li ng-click="del()" >삭제</li>
-		<li ng-click="rename()"  class='underline'>이름변경</li>
-		<li ng-click="favorite()" class='underline'>중요 표시하기</li>
-		<li ng-click="attribute()" >속성</li>
-	</ul>
-</div>
+	
+	<div id="menu" class='contextMenu' style="position: fixed;">
+		<ul>
+			<li ng-click="newfolder()">새폴더</li>
+			<li ng-click="upload()">파일올리기</li>
+			<li ng-click="download()"class='underline'>내려받기</li>
+			<li ng-click="share()" class='underline'>공유하기</li>
+			<li ng-click="cut()" >잘라내기</li>
+			<li ng-click="move()" >이동</li>
+			<li ng-click="copy()">복사</li>
+			<li ng-click="paste()" class='underline'>붙여넣기</li>
+			<li ng-click="del()" >삭제</li>
+			<li ng-click="rename()"  class='underline'>이름변경</li>
+			<li ng-click="favorite()" class='underline'>중요 표시하기</li>
+			<li ng-click="attribute()" >속성</li>
+		</ul>
+	</div>
 </div>

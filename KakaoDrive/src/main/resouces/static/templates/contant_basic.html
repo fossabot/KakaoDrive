@@ -1,0 +1,27 @@
+<div class="contentTop">
+
+	<div class="card card-folder" ng-repeat="item in items" data-id="item.id"context-menu="onRightClick(this)" data-target="item-menu">
+		{{ item.id }} : {{ item.name }}
+	
+	</div>
+
+
+	<div id="item-menu" class='contextMenu' style="position: fixed;">
+		<ul>
+			<li ng-click="newfolder()">뷰어로 보기</li>
+			<li ng-click="newFolder()"class='underline'>내려받기</li>
+			<li ng-click="newFolder()" class='underline'>공유하기</li>
+			<li ng-click="newFolder()" >잘라내기</li>
+			<li ng-click="newFolder()" >이동</li>
+			<li ng-click="newFolder()">복사</li>
+			<li ng-click="newFolder()" class='underline'>붙여넣기</li>
+			<li ng-click="newFolder()" >삭제</li>
+			<li ng-click="newFolder()"  class='underline'>이름변경</li>
+			<li ng-click="newFolder()"  class='underline'>내보내기</li>
+			<li ng-click="newFolder()"  class='underline'>중요 표시하기</li>
+			<li ng-click="newFolder()">파일 버젼관리</li>
+			<li ng-click="newFolder()" >속성</li>
+		</ul>
+	</div>
+
+</div>

@@ -122,17 +122,67 @@ baseControllers.controller('NavigationController', [ '$scope', '$filter', 'Accou
 
 
 baseControllers.controller('SectionController', [ '$scope', 'OperationService', 'ExplorerService', function($scope, operationService, explorerService) {
+	
+	$scope.view = {
+			content: {
+				basic: 'templates/contant_basic.html',
+			}
+		}
+	
+	
+	$scope.items = [
+		{
+			id: 1,
+			type: 'folder',
+			name: '새 폴더',
+			favorite: false,
+		},
+		{
+			id: 2,
+			type: 'folder',
+			name: '새 폴더 (1)',
+			favorite: false,
+		},
+		{
+			id: 3,
+			type: 'folder',
+			name: '새 폴더 (2)',
+			favorite: false,
+		},
+		{
+			id: 4,
+			type: 'folder',
+			name: '새 폴더 (3)',
+			favorite: false,
+		},
+		{
+			id: 5,
+			type: 'file',
+			name: '내 사진.jpg',
+			favorite: false,
+		},
+		{
+			id: 6,
+			type: 'file',
+			name: '내 문서.doc',
+			favorite: false,
+		},
+		{
+			id: 7,
+			type: 'file',
+			name: '내 문서 (1).doc',
+			favorite: false,
+		},
+	]
+	
+	$scope.onRightClick = function(scope) {
+		//console.log(scope.$modelValue);
+	};
+	
 	$scope.newFolder = function() {
 		console.log('newfolder!');
 	};
-//	$scope.search = function(fileName) {
-//		archiveService.search(fileName);
-//	};
-//	
-//	$scope.downloadZip = function(fileName) {
-//		console.log(fileName);
-//		downloadService.downloadZip(fileName);
-//	};
+
 }]);
 
 

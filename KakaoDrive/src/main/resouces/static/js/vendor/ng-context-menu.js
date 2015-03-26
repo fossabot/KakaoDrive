@@ -21,7 +21,7 @@ angular.module('ng-context-menu', [])
 			},
 			link: function(scope, element, attrs) {
 				var opened = false;
-				scope.selectedId = scope.$parent.$modelValue.id; 
+				scope.selectedId = (scope.$parent.$modelValue)? scope.$parent.$modelValue.id : attrs.id;
 
 				function open(event, menuElement) {
 					menuElement.addClass('open');

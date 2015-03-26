@@ -42,3 +42,16 @@ div.folderTreeWrap > div:after {
 	display:block; 
 	clear:both;
 }
+
+
+
+.contentTop {
+	padding: 10px;
+	text-align: left;
+}
+
+.card-folder {
+	width: 120px;
+	height: 140px;
+	margin: 10px;
+}

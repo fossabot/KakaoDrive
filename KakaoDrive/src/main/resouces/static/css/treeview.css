@@ -32,6 +32,16 @@ div.angular-ui-tree-handle {
 	-moz-binding:url(/xe/ellipsis.xml#ellipsis)
 }
 
+div.angular-ui-tree-handle i {
+	font-size: 14px;
+}
+
+div.angular-ui-tree-handle i.fa-minus-circle,
+div.angular-ui-tree-handle i.fa-plus-circle {
+	cursor: pointer;
+}
+
+
 .angular-ui-tree-handle:hover {
 	color: #438eb9;
 	background: #f4f6f7;
@@ -92,9 +102,8 @@ div.angular-ui-tree-handle {
 	position: relative;
 }
 .treeSearch {
-	border-top: 0 solid #fff;
-	border-left: 0 solid #fff;
-	border-right: 0 solid #fff;
+	border: 0 solid #fff;
+	border-bottom: 1px solid #eee;
 	width: 100%;
 	height: 25px;
 	line-height: 25px;

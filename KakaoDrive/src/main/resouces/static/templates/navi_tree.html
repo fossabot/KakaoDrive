@@ -2,8 +2,8 @@
 <!-- Nested node template -->
 <script type="text/ng-template" id="nodes_renderer.html">
 	<div ui-tree-handle>
-		<i data-nodrag class="icon fa-minus-square" ng-if="folder.children.length" ng-click="toggle(this)" ng-class="{'fa-minus-square': !collapsed, 'fa-plus-square': collapsed}"> </i>
-		<i data-nodrag class="icon fa-square" ng-if="!folder.children.length"> </i>
+		<i data-nodrag class="icon fa-minus-circle" ng-if="folder.children.length" ng-click="toggle(this)" ng-class="{'fa-minus-circle': !collapsed, 'fa-plus-circle': collapsed}"> </i>
+		<button class="btn tree-blank-head" ng-if="!folder.children.length"></button>
 		<span>
 			<i data-nodrag class="icon fa-folder-o" ng-if="!folder.children.length || collapsed"> </i>
 			<i data-nodrag class="icon fa-folder-open-o" ng-if="folder.children.length && !collapsed"> </i>

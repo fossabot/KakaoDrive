@@ -9,6 +9,7 @@
 	text-align: left;
 	font-size: 12px;
 	font-family: "돋움",dotum,sans-serif;
+	color: #3a3b40;
 }
 
 .btn {
@@ -38,7 +39,13 @@ div.angular-ui-tree-handle i {
 
 div.angular-ui-tree-handle i.fa-minus-circle,
 div.angular-ui-tree-handle i.fa-plus-circle {
+	color: #039BE5;
 	cursor: pointer;
+}
+
+div.angular-ui-tree-handle i.fa-folder,
+div.angular-ui-tree-handle i.fa-folder-open {
+	color: #FAD56F;
 }
 
 

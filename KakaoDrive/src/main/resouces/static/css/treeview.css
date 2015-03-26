@@ -120,7 +120,7 @@ div.angular-ui-tree-handle i.fa-folder-open {
 }
 
 .treeLock {
-	background: #BBDEFB;
+	background: #E3F2FD;
 	cursor: pointer;
 	width: 24px;
 	position: absolute;
@@ -146,7 +146,7 @@ div.angular-ui-tree-handle i.fa-folder-open {
 }
 
 .expandAll {
-	background: #BBDEFB;
+	background: #E3F2FD;
 	cursor: pointer;
 	width: 24px;
 	position: absolute;

@@ -55,6 +55,7 @@ div.folderTreeWrap > div:after {
 
 
 .contentTop {
+	min-width: 300px;
 	padding: 10px;
 	text-align: left;
 }

@@ -138,11 +138,12 @@ button {
 }
 
 #Head {
-	position: relative;
+	position: fixed;
+	top: 0;
 	width: 100%;
 	height: 100px;
 	overflow: hidden;
-	z-index: 10;
+	z-index: 11;
 	background-color: #03A9F4;
 }
 
@@ -162,19 +163,40 @@ button {
 
 #bodyWrap {
 	width: 100%;
-	min-height: 100%;
-	margin: -50px auto -30px;
+	margin-top: 100px;
 	background-color: #FAFAFA;
-	z-index: 5;
+	margin-bottom: 20px;
 }
 
-/* IE Hack */
-*html #bodyWrap { 
-	height: 100%;
+
+#bodyWrap > nav {
+	position: relative;
+	float: left;
+	margin-right: -250px;
+	width: 250px;
 }
+
+#bodyWrap > section {
+	position: relative;
+	margin-left: 250px;
+	background: #F9F9F9;
+}
+
+#bodyWrap:after
+#bodyWrap > nav:after, 
+#bodyWrap > section:after {
+	content:" "; 
+	display:block; 
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+
 
 #footerWrap {
-	position: relative;
+	position: fixed;
+	bottom: 0;
 	display: block;
 	width: 100%;
 	line-height: 30px;
@@ -182,30 +204,6 @@ button {
 	background-color: #e9eff6;
 	clear: both;
 	z-index: 11;
-}
-
-#bodyWrap > nav, #bodyWrap > section {
-	padding: 50px 0 30px 0;
-}
-
-#bodyWrap > nav {
-	float: left;
-	margin-right: -250px;
-	width: 250px;
-	height: 200px;
-}
-
-#bodyWrap > section {
-	margin-left: 250px;
-	background: #F9F9F9;
-	height: 500px;
-	z-index: 999;
-}
-
-#bodyWrap > nav:after, #bodyWrap > section:after {
-	content:" "; 
-	display:block; 
-	clear:both;
 }
 
 #navSizeCtrl {

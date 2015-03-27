@@ -44,6 +44,10 @@
 	
 	
 	<div id="menu" class='contextMenu menu blue' style="position: fixed;">
+		<div class="item" ng-repeat="m in treeContextMenu" ng-click="m.click()" ng-class="{'underline': m.underline}">
+			<div class="label" fit>{{ m.text }}</div>
+			<paper-ripple fit></paper-ripple>
+		</div> 
 		<div class="item" ng-click="newfolder()">
 			<div class="label" fit>새폴더</div>
 			<paper-ripple fit></paper-ripple>

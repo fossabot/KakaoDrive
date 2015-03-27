@@ -46,6 +46,92 @@ baseControllers.controller('NavigationController', [ '$scope', '$filter', 'Accou
 		$scope.selectedFolder = folder;
 	})
 	
+	$scope.treeContextMenu = [
+	    {
+	    	text: '새폴더',
+	    	click: function() {
+	    		console.log('new folder!');
+	    	}
+	    },
+	    {
+	    	text: '다운로드',
+	    	click: function() {
+	    		console.log('download!');
+	    	}
+	    },
+	    {
+	    	text: '업로드',
+	    	underline: true,
+	    	click: function() {
+	    		console.log('upload!');
+	    	}
+	    },
+	    {
+	    	text: '공유하기',
+	    	underline: true,
+	    	click: function() {
+	    		console.log('share!');
+	    	}
+	    },
+	    {
+	    	text: '잘라내기',
+	    	underline: true,
+	    	click: function() {
+	    		console.log('cut');
+	    	}
+	    },
+	    {
+	    	text: '이동',
+	    	underline: true,
+	    	click: function() {
+	    		console.log('move');
+	    	}
+	    },
+	    {
+	    	text: '복사',
+	    	underline: true,
+	    	click: function() {
+	    		console.log('copy');
+	    	}
+	    },
+	    {
+	    	text: '붙여넣기',
+	    	underline: true,
+	    	click: function() {
+	    		console.log('paste');
+	    	}
+	    },
+	    {
+	    	text: '삭제',
+	    	underline: true,
+	    	click: function() {
+	    		console.log('del');
+	    	}
+	    },
+	    {
+	    	text: '이름변경',
+	    	underline: true,
+	    	click: function() {
+	    		console.log('rename');
+	    	}
+	    },
+	    {
+	    	text: '중요 표시하기',
+	    	underline: true,
+	    	click: function() {
+	    		console.log('favorite');
+	    	}
+	    },
+	    {
+	    	text: '속성',
+	    	underline: true,
+	    	click: function() {
+	    		console.log('upload');
+	    	}
+	    }
+	    
+	]
+	
 	$scope.copy = function() {
 		console.log('Copy!');
 	};

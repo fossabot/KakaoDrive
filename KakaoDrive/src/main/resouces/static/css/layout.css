@@ -99,7 +99,6 @@ html,body {
 	padding: 0;
 	margin: 0;
 	text-align: center;
-	height: 100%;
 }
 
 body {
@@ -163,7 +162,7 @@ button {
 
 #bodyWrap {
 	width: 100%;
-	margin-top: 100px;
+	padding-top: 100px;
 	background-color: #FAFAFA;
 	margin-bottom: 20px;
 }

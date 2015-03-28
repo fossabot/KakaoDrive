@@ -11,6 +11,7 @@ var app = angular.module('com.kakao.drive.web', [
 	'ui.tree-filter',
 	'ng-context-menu',
 	'ngCanvasGauge',
+	'ngDragDrop',
     ]);
 
 app.run(function($rootScope, $http) {

@@ -1,7 +1,7 @@
 <div class="treeTop">
 	<!-- Nested node template -->
 	<script type="text/ng-template" id="nodes_renderer.html">
-		<div ui-tree-handle>
+		<div ui-tree-handle ng-class="{'movepointer': !treeLocked}">
 			<i data-nodrag class="icon fa-minus-circle" ng-if="folder.children.length" ng-click="toggle(this)" ng-class="{'fa-minus-circle': !collapsed, 'fa-plus-circle': collapsed}"> </i>
 			<button class="btn tree-blank-head" ng-if="!folder.children.length"></button>
 			<span>

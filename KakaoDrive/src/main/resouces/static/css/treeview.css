@@ -151,6 +151,10 @@ div.angular-ui-tree-handle i.fa-folder-open {
 	top: 0px;
 }
 
+.movepointer {
+	cursor: move;
+}
+
 .collapseAll {
 	right: 48px;
 }

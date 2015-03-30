@@ -1,44 +1,52 @@
 buildscript {
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.2.RELEASE")
-    }
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.2.RELEASE")
+	}
 }
 
 apply plugin: 'java'
-apply plugin: 'eclipse'
+apply plugin: 'eclipse-wtp'
+apply plugin: 'war'
 apply plugin: 'idea'
 apply plugin: 'spring-boot'
 
 ext {
-    javaVersion='1.8'
+	javaVersion='1.8'
 }
 
-jar {
-    baseName = 'kakaobox'
-    version =  '0.1.0'
+
+war {
+	baseName = 'kakaobox'
+	version =  '0.1.0'
 }
+
+configurations {
+	providedRuntime
+}
+
 
 repositories {
-    mavenLocal()
-    mavenCentral()
-    maven { url "http://repo.spring.io/libs-release" }
+	mavenLocal()
+	mavenCentral()
+	maven { url "http://repo.spring.io/libs-release" }
 }
 
 dependencies {
-    compile("org.springframework.boot:spring-boot-starter-web")
-    compile("org.springframework.boot:spring-boot-starter-actuator")
-    
-    compile("org.apache.commons:commons-lang3:3.1")
-    compile("commons-io:commons-io:2.4")
-    
+	compile("org.springframework.boot:spring-boot-starter-web")
+	compile("org.springframework.boot:spring-boot-starter-actuator")
 
-    testCompile("junit:junit")
-    testCompile("org.springframework.boot:spring-boot-starter-test")
+	compile("org.apache.commons:commons-lang3:3.1")
+	compile("commons-io:commons-io:2.4")
+	
+	providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
+	
+	testCompile("junit:junit")
+	testCompile("org.springframework.boot:spring-boot-starter-test")
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.3'
+	gradleVersion = '2.3'
 }

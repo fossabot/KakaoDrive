@@ -149,6 +149,7 @@ div.angular-ui-tree-handle i.fa-folder-open {
 	right: 48px;
 	z-index: 2;
 	top: 0px;
+	font-size: 14px;
 }
 
 .movepointer {

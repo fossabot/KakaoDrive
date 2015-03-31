@@ -19,7 +19,7 @@ ext {
 
 
 war {
-	baseName = 'kakaobox'
+	baseName = 'kakaodrive'
 	version =  '0.1.0'
 }
 

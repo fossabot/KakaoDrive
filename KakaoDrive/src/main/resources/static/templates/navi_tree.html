@@ -16,6 +16,7 @@
 		</ol>
 	</script>
 	
+	<!-- Folder Tree -->
 	<div class="folderTreeWrap card">
 		<div ui-tree="options">
 			<div ui-tree-placeholder class="tree-ctl collapseAll" ng-click="collapseAll(this)">
@@ -40,62 +41,12 @@
 		</div>
 	</div>
 	
-	
-	
-	
+	<!-- context Menu -->
 	<div id="menu" class='contextMenu menu blue' style="position: fixed;">
 		<div class="item" ng-repeat="m in treeContextMenu" ng-click="m.click()" ng-class="{'underline': m.underline}">
 			<div class="label" fit>{{ m.text }}</div>
 			<paper-ripple fit></paper-ripple>
 		</div> 
-		<div class="item" ng-click="newfolder()">
-			<div class="label" fit>새폴더</div>
-			<paper-ripple fit></paper-ripple>
-		</div>
-		<div class="item" ng-click="upload()">
-			<div class="label" fit>파일올리기</div>
-			<paper-ripple fit></paper-ripple>
-		</div>
-		<div class="item underline" ng-click="download()">
-			<div class="label" fit>내려받기</div>
-			<paper-ripple fit></paper-ripple>
-		</div>
-		<div class="item underline" ng-click="share()">
-			<div class="label" fit>공유하기</div>
-			<paper-ripple fit></paper-ripple>
-		</div>
-		<div class="item" ng-click="cut()">
-			<div class="label" fit>잘라내기</div>
-			<paper-ripple fit></paper-ripple>
-		</div>
-		<div class="item" ng-click="move()">
-			<div class="label" fit>이동</div>
-			<paper-ripple fit></paper-ripple>
-		</div>
-		<div class="item" ng-click="newfolder()">
-			<div class="label" fit>복사</div>
-			<paper-ripple fit></paper-ripple>
-		</div>
-		<div class="item underline" ng-click="paste()">
-			<div class="label" fit>붙여넣기</div>
-			<paper-ripple fit></paper-ripple>
-		</div>
-		<div class="item" ng-click="del()">
-			<div class="label" fit>삭제</div>
-			<paper-ripple fit></paper-ripple>
-		</div>
-		<div class="item underline" ng-click="rename()">
-			<div class="label" fit>이름변경</div>
-			<paper-ripple fit></paper-ripple>
-		</div>
-		<div class="item underline" ng-click="favorite()">
-			<div class="label" fit>중요 표시하기</div>
-			<paper-ripple fit></paper-ripple>
-		</div>
-		<div class="item" ng-click="attribute()">
-			<div class="label" fit>속성</div>
-			<paper-ripple fit></paper-ripple>
-		</div>
-		
 	</div>
+	
 </div>

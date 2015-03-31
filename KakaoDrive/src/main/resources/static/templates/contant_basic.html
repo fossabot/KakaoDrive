@@ -1,8 +1,8 @@
 <div class="contentTop">
 
 	<div class="card card-folder" ng-repeat="item in items" data-id="item.id"context-menu="onRightClick(this)" data-target="item-menu">
-		{{ item.id }} : {{ item.name }}
-	
+		<img ng-style="{'background':'url({{ item.src }}) 50% 50% no-repeat'}"/>
+		{{ item.name }}
 	</div>
 	
 	

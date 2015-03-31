@@ -232,42 +232,42 @@ baseControllers.controller('SectionController', [ '$scope', 'OperationService', 
 			type: 'folder',
 			name: '새 폴더',
 			favorite: false,
+			src: '/img/image_01.jpg'
 		},
 		{
 			id: 2,
 			type: 'folder',
 			name: '새 폴더 (1)',
 			favorite: false,
+			src: '/img/image_02.jpg'
 		},
 		{
 			id: 3,
 			type: 'folder',
 			name: '새 폴더 (2)',
 			favorite: false,
+			src: '/img/image_03.jpg'
 		},
 		{
 			id: 4,
 			type: 'folder',
 			name: '새 폴더 (3)',
 			favorite: false,
+			src: '/img/image_04.jpg'
 		},
 		{
 			id: 5,
 			type: 'file',
 			name: '내 사진.jpg',
 			favorite: false,
+			src: '/img/image_05.jpg'
 		},
 		{
 			id: 6,
 			type: 'file',
 			name: '내 문서.doc',
 			favorite: false,
-		},
-		{
-			id: 7,
-			type: 'file',
-			name: '내 문서 (1).doc',
-			favorite: false,
+			src: '/img/image_06.jpg'
 		},
 	]
 	

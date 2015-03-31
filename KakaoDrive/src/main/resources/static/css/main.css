@@ -64,4 +64,10 @@ div.folderTreeWrap > div:after {
 	width: 120px;
 	height: 140px;
 	margin: 10px;
+	overflow: hidden;
+}
+
+.card-folder img{
+	width: 120px;
+	height: 140px;
 }

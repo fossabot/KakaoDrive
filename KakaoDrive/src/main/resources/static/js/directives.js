@@ -6,7 +6,16 @@
 var directives = angular.module('com.kakao.drive.web.directives', []);
 
 
-	
+	directives.directive('bgImage', function(){
+	    return function(scope, element, attrs) {
+	        scope.$watch(attrs.bgImage, function(value) {
+	            element.css({
+	                'background-image': 'url(' + value +')',
+	                'background-size' : 'cover'
+	            });
+	        });
+	    };
+	})
 	
 	// 창 분할 크기 조절바
 	directives.directive('flexSplitbar', [ '$document', function($document) {

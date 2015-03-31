@@ -47,89 +47,89 @@ baseControllers.controller('NavigationController', [ '$scope', '$filter', 'Accou
 	})
 	
 	$scope.treeContextMenu = [
-	    {
-	    	text: '새폴더',
-	    	click: function() {
-	    		console.log('new folder!');
-	    	}
-	    },
-	    {
-	    	text: '다운로드',
-	    	click: function() {
-	    		console.log('download!');
-	    	}
-	    },
-	    {
-	    	text: '업로드',
-	    	underline: true,
-	    	click: function() {
-	    		console.log('upload!');
-	    	}
-	    },
-	    {
-	    	text: '공유하기',
-	    	underline: true,
-	    	click: function() {
-	    		console.log('share!');
-	    	}
-	    },
-	    {
-	    	text: '잘라내기',
-	    	underline: true,
-	    	click: function() {
-	    		console.log('cut');
-	    	}
-	    },
-	    {
-	    	text: '이동',
-	    	underline: true,
-	    	click: function() {
-	    		console.log('move');
-	    	}
-	    },
-	    {
-	    	text: '복사',
-	    	underline: true,
-	    	click: function() {
-	    		console.log('copy');
-	    	}
-	    },
-	    {
-	    	text: '붙여넣기',
-	    	underline: true,
-	    	click: function() {
-	    		console.log('paste');
-	    	}
-	    },
-	    {
-	    	text: '삭제',
-	    	underline: true,
-	    	click: function() {
-	    		console.log('del');
-	    	}
-	    },
-	    {
-	    	text: '이름변경',
-	    	underline: true,
-	    	click: function() {
-	    		console.log('rename');
-	    	}
-	    },
-	    {
-	    	text: '중요 표시하기',
-	    	underline: true,
-	    	click: function() {
-	    		console.log('favorite');
-	    	}
-	    },
-	    {
-	    	text: '속성',
-	    	underline: true,
-	    	click: function() {
-	    		console.log('upload');
-	    	}
-	    }
-	    
+		{
+			text: '새폴더',
+			click: function() {
+				console.log('new folder!');
+				var nodeData = $scope.selectedFolder
+				nodeData.children.push({
+					id: nodeData.id * 10 + nodeData.children.length,
+					name: nodeData.name + '.' + (nodeData.children.length + 1),
+					children: []
+				});
+			}
+		},
+		{
+			text: '다운로드',
+			click: function() {
+				console.log('download!');
+			}
+		},
+		{
+			text: '업로드',
+			underline: true,
+			click: function() {
+				console.log('upload!');
+			}
+		},
+		{
+			text: '공유하기',
+			underline: true,
+			click: function() {
+				console.log('share!');
+			}
+		},
+		{
+			text: '잘라내기',
+			click: function() {
+				console.log('cut');
+			}
+		},
+		{
+			text: '이동',
+			click: function() {
+				console.log('move');
+			}
+		},
+		{
+			text: '복사',
+			click: function() {
+				console.log('copy');
+			}
+		},
+		{
+			text: '붙여넣기',
+			click: function() {
+				console.log('paste');
+			}
+		},
+		{
+			text: '삭제',
+			click: function() {
+				console.log('del');
+			}
+		},
+		{
+			text: '이름변경',
+			underline: true,
+			click: function() {
+				console.log('rename');
+			}
+		},
+		{
+			text: '중요 표시하기',
+			underline: true,
+			click: function() {
+				console.log('favorite');
+			}
+		},
+		{
+			text: '속성',
+			underline: true,
+			click: function() {
+				console.log('properties!');
+			}
+		}
 	]
 	
 	$scope.copy = function() {
@@ -269,6 +269,95 @@ baseControllers.controller('SectionController', [ '$scope', 'OperationService', 
 			name: '내 문서 (1).doc',
 			favorite: false,
 		},
+	]
+	
+	
+	$scope.contextMenu = [
+		{
+			text: '뷰어로 보기',
+			click: function() {
+				console.log('new folder!');
+			}
+		},
+		{
+			text: '내려받기',
+			underline: true,
+			click: function() {
+				console.log('download!!');
+			}
+		},
+		{
+			text: '공유하기',
+			underline: true,
+			click: function() {
+				console.log('share!');
+			}
+		},
+		{
+			text: '잘라내기',
+			click: function() {
+				console.log('cut');
+			}
+		},
+		{
+			text: '이동',
+			click: function() {
+				console.log('move');
+			}
+		},
+		{
+			text: '복사',
+			click: function() {
+				console.log('copy');
+			}
+		},
+		{
+			text: '붙여넣기',
+			click: function() {
+				console.log('paste');
+			}
+		},
+		{
+			text: '삭제',
+			click: function() {
+				console.log('del');
+			}
+		},
+		{
+			text: '이름변경',
+			underline: true,
+			click: function() {
+				console.log('rename');
+			}
+		},
+		{
+			text: '내보내기',
+			underline: true,
+			click: function() {
+				console.log('export');
+			}
+		},
+		{
+			text: '중요 표시하기',
+			underline: true,
+			click: function() {
+				console.log('favorite');
+			}
+		},
+		{
+			text: '파일 버젼관리',
+			underline: true,
+			click: function() {
+				console.log('version!');
+			}
+		},
+		{
+			text: '속성',
+			underline: true,
+			click: function() {
+				console.log('properties!');
+			}
+		}
 	]
 	
 	$scope.onRightClick = function(scope) {
